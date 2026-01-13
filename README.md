@@ -72,7 +72,9 @@ The heuristics used allow the algorithm to avoid local minima, which the classic
         --force_min_corr: Forces the error correction threshold.
 
 #### Requirments
-`pip install numpy`
+Scripts require `bowtie2` program and Python modules:
+- pysam
+- numpy
 
 ### Evaluation
 `bash evaluate.sh [output.fasta]`

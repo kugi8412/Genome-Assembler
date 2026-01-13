@@ -275,7 +275,9 @@ class Assembler:
         processed_starts = set()
 
         for start_node in start_nodes:
-            if start_node in processed_starts: continue
+            if start_node in processed_starts:
+                continue
+
             if any((u, start_node) in global_visited_edges for u in self.rev_graph.get(start_node, {})):
                  continue
 

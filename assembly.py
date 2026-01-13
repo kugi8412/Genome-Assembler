@@ -137,7 +137,7 @@ class Assembler:
                             if b == orig:
                                 continue
 
-                            cand = kmer[:j] + b + kmer[j+1:]
+                            cand = kmer[:j] + b + kmer[j + 1:]
                             if cand in solid_kmers:
                                 candidates.append((j, b, raw_counts[cand]))
 
@@ -160,7 +160,7 @@ class Assembler:
         for read in self.reads:
             for i in range(len(read) - self.k):
                 k1 = read[i:i+self.k]
-                k2 = read[i+1:i+1+self.k]
+                k2 = read[i+1: i+1+self.k]
                 
                 if final_counts[k1] < self.min_cov or final_counts[k2] < self.min_cov:
                     continue
@@ -336,7 +336,7 @@ class Assembler:
                 if len(contig_seq) >= self.min_contig_len:
                     contigs.append(contig_seq)
                     for i in range(len(final_path_nodes) - 1):
-                        global_visited_edges.add((final_path_nodes[i], final_path_nodes[i+1]))
+                        global_visited_edges.add((final_path_nodes[i], final_path_nodes[i + 1]))
                     for node in final_path_nodes:
                         processed_starts.add(node)
 
@@ -390,3 +390,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
